@@ -1,0 +1,10 @@
+<div class="container">
+    <h3 class="m-2 mt-5">Here are your results:</h3>
+    <div class="container mt-3">
+      <p>Your word: <%= @word %></p>
+      <p>Your score= <%= @score %> - <%= @cumuled_score %> cumuled </p>
+      <p>Message: <%= @message %></p>
+    </div>
+
+    <%= link_to 'Play new game', new_path() %>
+</div>

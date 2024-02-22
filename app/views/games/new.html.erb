@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center mt-3">Welcome to longest word game!</h1>
+  <h3 class="m-2 mt-5">Here is your grid:</h3>
+  <div class="d-flex">
+    <% @letters.each do |letter| %>
+      <div class="bg-primary p-3 m-2 text-white fw-bold"><%= letter %></div>
+    <% end %>
+  </div>
+
+  <form class="row g-3 mt-5" action="/score" method="POST" data-turbo="false">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <div class="col-auto">
+      <input type="text" readonly class="form-control-plaintext" value="Type your word here:">
+    </div>
+    <div class="col-auto">
+      <input type="word" name="word" class="form-control" id="word">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Submit your word</button>
+    </div>
+  </form>
+</div>
